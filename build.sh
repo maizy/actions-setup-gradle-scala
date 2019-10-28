@@ -13,6 +13,7 @@ for GRADLE_LAUNCHER_VERSION in '5.6.3' '4.10.3'; do
             --build-arg "SCALA_VERSION=${SCALA_VERSION}" \
             --build-arg "GRADLE_LAUNCHER_VERSION=${GRADLE_LAUNCHER_VERSION}" \
             -t "maizy/actions-setup-gradle-scala:8u212-scala-${SCALA_VERSION}-gradle-${GRADLE_LAUNCHER_VERSION}-v1" \
+            -f dockerhub.dockerfile \
             .
     done
 done

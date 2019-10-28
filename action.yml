@@ -1,0 +1,22 @@
+name: 'Gradle + Scala'
+description: 'Run GitHub Actions with gradle & scala. Also could be used to build java project.'
+inputs:
+  gradle:
+    description: 'Gradle launcher version'
+    required: true
+    default: '5.6.3'
+  scala:
+    description: 'Scala version'
+    required: true
+    default: '2.13.1'
+  build-sample-project:
+    description: 'Build empty scala project with gradle to fullfill local cache'
+    required: true
+    default: 'false'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.gradle }}
+    - ${{ inputs.scala }}
+    - ${{ inputs.build-sample-project }}
